@@ -8,12 +8,44 @@
 	<body>
 		<h1>Привет мир!</h1>
 
+		<script>
+			let menuData = {
+				title: 'Ваша почта:',
+				items: [
+					{
+						id: 0,
+						url: '/inbox',
+						title: 'Входящие'
+					},
+
+					{
+						id: 1,
+						url: '/sent',
+						title: 'Отправленные'
+					}
+				]
+			};
+
+
+			class Menu {
+				constructor () {
+					let div = document.createElement('div');
+					div.setAttribute('class', 'menu');
+					// TODO: что-то нужно
+				}
+			}
+
+
+			let menu = new Menu(menuData);
+			menu.render(); // отрисовать меню по данным из menuData
+		</script>
+
 		<div class="menu">
-			<div class="menu__title">Мое первое меню!</div>
+			<div class="menu__title">Папки юзера</div>
 			<div class="menu__list">
-				<a href="" class="menu__item">Первый элемент меню!</a>
-				<a href="" class="menu__item">Второй элемент меню!</a>
-				<a href="" class="menu__item">Третий элемент меню!</a>
+				<a href="" class="menu__item">Входящие</a>
+				<a href="" class="menu__item">????</a>
+				<a href="" class="menu__item">????</a>
 			</div>
 		</div>
 
