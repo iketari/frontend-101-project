@@ -1,0 +1,19 @@
+.menu {
+	background-color: #cecece;
+	width: 300px;
+	text-align: center;
+}
+
+.menu__title {
+	font-size: 19px;
+	text-decoration: underline;
+}
+
+.menu__item {
+	padding: 5px;
+	margin: 5px 0;
+	display: block;
+	text-decoration: none;
+	outline: none;
+}
+

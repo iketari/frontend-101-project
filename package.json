@@ -1,0 +1,23 @@
+{
+  "name": "frontend-101-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iketari/frontend-101-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iketari/frontend-101-project/issues"
+  },
+  "homepage": "https://github.com/iketari/frontend-101-project#readme",
+  "devDependencies": {
+    "node-static": "^0.7.9"
+  }
+}
