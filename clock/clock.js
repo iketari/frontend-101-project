@@ -13,8 +13,7 @@ Clock.prototype._render = function () {
   let hh = date.getHours();
   let min = date.getMinutes();
   let sec = date.getSeconds();
-  let display;
-
+  
   if (hh < 10) {
     hh = '0' + hh;
   }
@@ -24,9 +23,8 @@ Clock.prototype._render = function () {
   if (sec < 10) {
     sec = '0' + sec;
   }
-
-  display = hh + ':' + min + ':' + sec;
-  document.body.innerHTML = display;
+  
+  document.body.innerHTML = "<span id='hh'>" + hh + "</span>:<span id='min'>" + min + "</span>:<span id='sec'>" + sec + "</span>";  
 };
 
 Clock.prototype.start = function() {
