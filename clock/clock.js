@@ -5,7 +5,7 @@
  * @param {number} precision
  */
 function Clock (precision) {
-	this.precision = precision;
+	this.precision = precision||1000;
 }
 
 Clock.prototype._render = function () {
