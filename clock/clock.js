@@ -24,7 +24,10 @@ Clock.prototype._render = function () {
     sec = '0' + sec;
   }
   
-  document.body.innerHTML = "<span id='hh'>" + hh + "</span>:<span id='min'>" + min + "</span>:<span id='sec'>" + sec + "</span>";  
+  document.getElementById('hh').innerHTML = hh;
+  document.getElementById('min').innerHTML = min;
+  document.getElementById('sec').innerHTML = sec;
+
 };
 
 Clock.prototype.start = function() {
