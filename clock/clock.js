@@ -1,37 +1,58 @@
 'use strict';
 
 /** 
- * @constructor
- * @param {number} precision
+ * @class Clock
  */
-function Clock (precision) {
-	this.precision = precision||1000;
+class Clock {
+
+  /**
+   * @constructor
+   */
+  constructor () {
+    this.precision = 1000;
+  }
+
+  render () {
+    let date = new Date();
+    let hh = date.getHours();
+    let min = date.getMinutes();
+    let sec = date.getSeconds();
+    let fronts, backs, meridiem;
+
+    if (hh > 12) {
+      hh -= 12;
+    }
+    if (hh < 10) {
+      hh = '0' + hh;
+    }
+    
+    if (min < 10) {
+      min = '0' + min;
+    }
+    
+    if (sec < 10) {
+      sec = '0' + sec;
+    }
+
+    fronts = document.querySelectorAll('.front');
+    backs = document.querySelectorAll('.back');
+    fronts[0].innerHTML = hh;
+    fronts[1].innerHTML = hh;
+    backs[0].innerHTML = hh + 1;
+
+    fronts[2].innerHTML = min;
+    fronts[3].innerHTML = min;
+    backs[1].innerHTML = min + 1
+
+    fronts[4].innerHTML = sec;
+    fronts[5].innerHTML = sec;
+    backs[2].innerHTML = sec + 1; 
+
+  };
+
+  start () {
+    this.render();
+    this._timer = setInterval(this.render.bind(this), this.precision);
+  };
 }
-
-Clock.prototype._render = function () {
-  let date = new Date();
-  let hh = date.getHours();
-  let min = date.getMinutes();
-  let sec = date.getSeconds();
-  
-  if (hh < 10) {
-    hh = '0' + hh;
-  }
-  if (min < 10) {
-    min = '0' + min;
-  }
-  if (sec < 10) {
-    sec = '0' + sec;
-  }
-  
-  document.getElementById('hh').innerHTML = hh;
-  document.getElementById('min').innerHTML = min;
-  document.getElementById('sec').innerHTML = sec;
-
-};
-
-Clock.prototype.start = function() {
-  this._render();
-  this._timer = setInterval(this._render.bind(this), this.precision);
-};
 
