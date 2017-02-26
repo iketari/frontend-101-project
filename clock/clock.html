@@ -7,39 +7,46 @@
 </head>
 <body>
   <div class="clock-wrap">
-      <div class="hour-wrap">
-        <div class="digit-top">
-          <div class="front">hh</div>
-          <div class="back">hh</div>
-        </div>
-        <div class="digit-bottom">
-          <div class="front">hh<div class="meridiem">am</div></div>
-        </div>
+    <div class="hour-wrap">
+      <div class="digit-top">
+        <div class="front">hh</div>
+        <div class="back">hh</div>
       </div>
-      <div class="min-wrap">
-        <div class="digit-top">
-          <div class="front">mm</div>
-          <div class="back">mm</div>
-        </div>
-        <div class="digit-bottom">
-          <div class="front">mm</div>
-        </div>
-      </div>
-      <div class="sec-wrap">
-        <div class="digit-top">
-          <div class="front">ss</div>
-          <div class="back">ss</div>
-        </div>
-        <div class="digit-bottom">
-          <div class="front">ss</div>
-        </div>
+      <div class="digit-bottom">
+        <div class="front">hh<div class="meridiem">am</div></div>
       </div>
     </div>
+    <div class="min-wrap">
+      <div class="digit-top">
+        <div class="front">mm</div>
+        <div class="back">mm</div>
+      </div>
+      <div class="digit-bottom">
+        <div class="front">mm</div>
+      </div>
+    </div>
+    <div class="sec-wrap">
+      <div class="digit-top">
+        <div class="front">ss</div>
+        <div class="back">ss</div>
+      </div>
+      <div class="digit-bottom">
+        <div class="front">ss</div>
+      </div>
+    </div>
+  </div>
+  <div class="button-wrap">
+    <button class="start-button" onclick="clock.start()">Start</button>
+    <button class="stop-button" onclick="clock.stop()">Stop</button>
+  </div>
   <script src="clock.js"></script>
   <script>
-    var clock = new Clock();    
+   'use strict';
+
+    let clock = new Clock();    
+    let startButton = document.querySelector('.start-button');
+    let stopButton = document.querySelector('.stop-button');
     clock.start();
   </script>
-
 </body>
 </html>

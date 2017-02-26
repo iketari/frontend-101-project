@@ -12,12 +12,22 @@ class Clock {
     this.precision = 1000;
   }
 
+  /**
+   * Создаем HTML
+   */
   render () {
     let date = new Date();
     let hh = date.getHours();
     let min = date.getMinutes();
     let sec = date.getSeconds();
-    let fronts, backs, meridiem;
+    let fronts, backs, meridiem = 'am';
+
+    fronts = document.querySelectorAll('.front');
+    backs = document.querySelectorAll('.back');
+
+    if (hh >= 12) {
+      meridiem = 'pm'; 
+    }
 
     if (hh > 12) {
       hh -= 12;
@@ -34,10 +44,9 @@ class Clock {
       sec = '0' + sec;
     }
 
-    fronts = document.querySelectorAll('.front');
-    backs = document.querySelectorAll('.back');
     fronts[0].innerHTML = hh;
-    fronts[1].innerHTML = hh;
+
+    fronts[1].innerHTML = hh + '<div class="meridiem">' + meridiem +'</div>';
     backs[0].innerHTML = hh + 1;
 
     fronts[2].innerHTML = min;
@@ -47,12 +56,21 @@ class Clock {
     fronts[4].innerHTML = sec;
     fronts[5].innerHTML = sec;
     backs[2].innerHTML = sec + 1; 
-
   };
 
+  /**
+   * Запускаем часики
+   */
   start () {
     this.render();
     this._timer = setInterval(this.render.bind(this), this.precision);
+  };
+
+  /**
+   * Останавливаем часики
+   */
+  stop () {
+    clearTimeout(this._timer);
   };
 }
 

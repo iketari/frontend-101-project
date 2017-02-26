@@ -1,9 +1,9 @@
-html, body, h1, h2, h3, h4, div, p, ul, ol, li {
-	padding: 0;
-	border: 0;
-	margin: 0;
+html, body, div, button {
+  padding: 0;
+  border: 0;
+  margin: 0;
   font: inherit;
-	font-size: 100%;
+  font-size: 100%;
 }
 
 body{
@@ -14,9 +14,8 @@ body{
   font-family: 'Oswald', sans-serif;
 }
 
-
-.clock-wrap{
-  width:619px;
+.clock-wrap {
+  width:620px;
   
   margin:30px auto 0px auto;
   padding:15px;
@@ -28,13 +27,11 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
 
 .hour-wrap, .min-wrap, .sec-wrap {
   width:200px;
-  height:200px;
-  
+  height:200px;  
   display: inline-block;
   position: relative;
 }
@@ -141,5 +138,36 @@ body{
   font-size: 24px;
   position: absolute;
   left:15px;
-  top: 30px;
+  top: 55px;
+}
+
+button:active {
+  background-color: #222;
+}
+
+.button-wrap {
+  width:185px;  
+  margin:40px auto 0px auto;
+  padding:5px;
+  border-radius: 5px;
+  position: fixed; 
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.start-button, .stop-button {
+  width:85px;
+  padding: 5px;
+  margin-left: 3px;
+  border-radius: 5px;  
+  display: inline-block;
+  color: #fff;
+  background-color: rgb(128,128,128);
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+}
+
+.stop-button {
+  margin-right: 3px;
 }
